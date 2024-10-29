@@ -1,0 +1,22 @@
+# build:
+#   python_version: "3.8"
+#   python_packages:
+#     - "cog==0.11.5"
+
+# predict: "predict.py:Predictor"
+
+build:
+  python_version: "3.8"
+  python_packages:
+    - "cog==0.11.5"
+    - "dash==2.6.0"
+    - "flask==2.0.1"
+    - "requests==2.26.0"
+  system_packages:
+    - "nodejs"
+  run:
+    - "npm install -g pkg"
+    - "npm install express"
+    - "pkg index.js -o dash_bundle"
+
+predict: "predict.py:Predictor"
